@@ -1,0 +1,29 @@
+@use "../utils";
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    @include utils.breakpoint(lg) {
+        gap: 10px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        color: var(--text-color);
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1.455;
+
+        @include utils.breakpoint(lg) {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__img {
+        @include utils.breakpoint(lg) {
+            width: 24px;
+        }
+    }
+}

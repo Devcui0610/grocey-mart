@@ -1,0 +1,124 @@
+@use "../utils";
+
+%flexItemsCenter {
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    background: var(--header-bg-color);
+}
+
+.top-bar {
+    @extend %flexItemsCenter;
+    padding: 30px 0;
+
+    @include utils.breakpoint(lg) {
+        padding: 20px 0;
+    }
+
+    @include utils.breakpoint(sm) {
+        padding: 16px 0;
+    }
+
+    &__more {
+        display: none;
+
+        @include utils.breakpoint(lg) {
+            display: block;
+        }
+    }
+}
+
+.top-act {
+    @extend %flexItemsCenter;
+    margin-left: auto;
+    gap: 20px;
+
+    @include utils.breakpoint(lg) {
+        margin-left: 0;
+    }
+
+    &__group {
+        @extend %flexItemsCenter;
+        justify-content: center;
+
+        border-radius: 8px;
+        background: var(--top-act-group-bg-color);
+        box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
+        height: 50px;
+        min-width: 50px;
+    }
+
+    &__btn {
+        @extend %flexItemsCenter;
+        padding: 7px;
+        cursor: pointer;
+    }
+
+    &__group:nth-child(2) {
+        display: flex;
+        justify-content: space-between;
+        width: 226px;
+
+        > button {
+            margin: 0 13px;
+        }
+    }
+
+    &__group,
+    &__group:nth-child(2) {
+        @include utils.breakpoint(lg) {
+            display: none;
+        }
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.467;
+        padding-left: 10px;
+    }
+
+    &__separate {
+        width: 1px;
+        height: 30px;
+        background: #ededf6;
+    }
+
+    &__avatar {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+}
+
+.navbar {
+    margin-left: 144px;
+
+    @include utils.breakpoint(xl) {
+        margin-left: 50px;
+    }
+
+    @include utils.breakpoint(lg) {
+        display: none;
+    }
+
+    &__list {
+        @extend %flexItemsCenter;
+        gap: 30px;
+    }
+
+    &__link {
+        @extend %flexItemsCenter;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.467;
+    }
+
+    &__arrow {
+        margin-left: 8px;
+    }
+}
