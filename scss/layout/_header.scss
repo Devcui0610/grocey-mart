@@ -7,10 +7,15 @@
 
 .header {
     background: var(--header-bg-color);
+
+    @include utils.breakpoint(lg) {
+        box-shadow: 0px 20px 60px 10px var(--header-shadow-color);
+    }
 }
 
 .top-bar {
     @extend %flexItemsCenter;
+    position: relative;
     padding: 30px 0;
 
     @include utils.breakpoint(lg) {
@@ -96,10 +101,10 @@
 }
 
 .navbar {
-    margin-left: 144px;
+    margin-left: 129px;
 
     @include utils.breakpoint(xl) {
-        margin-left: 50px;
+        margin-left: 28px;
     }
 
     @include utils.breakpoint(lg) {
@@ -108,7 +113,13 @@
 
     &__list {
         @extend %flexItemsCenter;
-        gap: 30px;
+    }
+
+    &__item {
+        &:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 
     &__link {
@@ -116,9 +127,13 @@
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 1.467;
+        padding: 15px;
+        height: 50px;
     }
 
     &__arrow {
         margin-left: 8px;
     }
 }
+
+
