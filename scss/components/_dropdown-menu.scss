@@ -1,6 +1,8 @@
+@use "../utils";
+
 .dropdown {
-    // opacity: 0;
-    // visibility: hidden;
+    opacity: 0;
+    visibility: hidden;
     transition: opacity 0.5s, visibility 0.5s;
     padding-top: 54px;
     position: absolute;
@@ -30,11 +32,12 @@
 
 .top-menu {
     --main-column-width: 292px;
+    --max-inner-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
 
     position: relative;
     &__main {
         width: var(--main-column-width);
-        height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+        height: var(--max-inner-height);
         border-right: 1px solid var(--top-menu-border-color);
         overflow-y: auto;
     }
@@ -44,8 +47,8 @@
     display: flex;
     gap: 14px;
 
-    & + .menu-column {
-        margin-top: var(--inner-padding);
+    + .menu-column {
+        margin-top: 22px;
     }
 
     &__icon {
@@ -53,6 +56,10 @@
         flex-shrink: 0;
         width: 36px;
         height: 36px;
+
+        @include utils.breakpoint(xl) {
+            display: none;
+        }
     }
 
     &__content {
@@ -67,15 +74,16 @@
     }
 
     &__list {
-        margin-top: 19px;
+        margin-top: 12px;
     }
 
     &__item {
-        &:hover .sub-menu {
+        &--active .sub-menu {
             display: grid;
         }
     }
 
+    &__item--active > &__link,
     &__item:hover > &__link {
         color: #0071dc;
         font-weight: 500;
@@ -115,4 +123,13 @@
     column-gap: var(--inner-padding);
     padding-left: var(--inner-padding);
     overflow-y: auto;
+
+    &--not-main {
+        position: initial;
+        display: grid;
+        inset: initial;
+        grid-template-columns: repeat(4, 1fr);
+        height: var(--max-inner-height);
+        padding-left: 0;
+    }
 }
