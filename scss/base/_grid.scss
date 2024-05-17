@@ -120,7 +120,7 @@ $gutters: (
     $max-width: map-get($container-max-widths, $breakpoint);
     $is-xs: $breakpoint == xs;
     $infix: if($is-xs, "", "-#{$breakpoint}");
-    @debug $infix;
+    // @debug $infix;
     @include make-media-query($dimension, $is-xs) {
         .container {
             max-width: $max-width;
