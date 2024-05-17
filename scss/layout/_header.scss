@@ -8,7 +8,7 @@
 .header {
     background: var(--header-bg-color);
 
-    @include utils.breakpoint(lg) {
+    @include utils.screen(lg) {
         box-shadow: 0px 20px 60px 10px var(--header-shadow-color);
     }
 }
@@ -17,12 +17,13 @@
     @extend %flexItemsCenter;
     position: relative;
     padding: 30px 0;
+    z-index: 1;
 
-    @include utils.breakpoint(lg) {
+    @include utils.screen(lg) {
         padding: 20px 0;
     }
 
-    @include utils.breakpoint(sm) {
+    @include utils.screen(sm) {
         padding: 16px 0;
     }
 }
@@ -32,7 +33,7 @@
     margin-left: auto;
     gap: 20px;
 
-    @include utils.breakpoint(lg) {
+    @include utils.screen(lg) {
         margin-left: 0;
     }
 
@@ -65,7 +66,7 @@
 
     &__group,
     &__group:nth-child(2) {
-        @include utils.breakpoint(lg) {
+        @include utils.screen(lg) {
             display: none;
         }
     }
@@ -95,11 +96,11 @@
 .navbar {
     margin-left: 129px;
 
-    @include utils.breakpoint(xl) {
+    @include utils.screen(xl) {
         margin-left: 28px;
     }
 
-    @include utils.breakpoint(lg) {
+    @include utils.screen(lg) {
         position: fixed;
         inset: 0 50% 0 0;
         z-index: 9;
@@ -124,19 +125,19 @@
         }
     }
 
-    @include utils.breakpoint(sm) {
+    @include utils.screen(sm) {
         inset: 0 20% 0 0;
     }
 
     &__close-btn {
         display: none;
 
-        @include utils.breakpoint(lg) {
+        @include utils.screen(lg) {
             display: block;
             padding: 10px 40px;
         }
 
-        @include utils.breakpoint(sm) {
+        @include utils.screen(sm) {
             padding: 10px 20px;
         }
     }
@@ -145,7 +146,7 @@
         visibility: hidden;
         opacity: 0;
 
-        @include utils.breakpoint(lg) {
+        @include utils.screen(lg) {
             position: fixed;
             inset: 0;
             z-index: 8;
@@ -160,7 +161,7 @@
     &__list {
         @extend %flexItemsCenter;
 
-        @include utils.breakpoint(lg) {
+        @include utils.screen(lg) {
             flex-direction: column;
             align-items: flex-start;
 
@@ -175,7 +176,7 @@
             display: block;
         }
 
-        @include utils.breakpoint(lg) {
+        @include utils.screen(lg) {
             width: 100%;
 
             &:hover .dropdown {
@@ -196,7 +197,7 @@
         padding: 15px;
         height: 50px;
 
-        @include utils.breakpoint(lg) {
+        @include utils.screen(lg) {
             justify-content: space-between;
             padding: 0 40px;
 
@@ -204,7 +205,7 @@
             line-height: 1.5;
         }
 
-        @include utils.breakpoint(sm) {
+        @include utils.screen(sm) {
             padding: 0 20px;
             height: 44px;
         }
@@ -213,7 +214,7 @@
     &__arrow {
         margin-left: 8px;
 
-        @include utils.breakpoint(lg) {
+        @include utils.screen(lg) {
             rotate: -90deg;
             transition: rotate 0.3s;
         }
@@ -229,7 +230,7 @@
     padding: 0 40px;
     align-items: center;
 
-    @include utils.breakpoint(sm) {
+    @include utils.screen(sm) {
         height: 44px;
         padding: 0 20px;
     }
