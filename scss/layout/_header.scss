@@ -105,7 +105,7 @@
         z-index: 9;
 
         background: var(--sidebar-bg);
-        
+
         margin-left: 0;
         padding: 20px 0;
         border-radius: 0px 20px 20px 0px;
@@ -166,6 +166,7 @@
 
             height: calc(100% - 124px);
             overflow-y: auto;
+            overscroll-behavior: contain;
         }
     }
 
