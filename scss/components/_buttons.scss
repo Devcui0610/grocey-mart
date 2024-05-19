@@ -1,0 +1,48 @@
+// Filter Product Button
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    height: 36px;
+    color: var(--btn-filter-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.423;
+
+    border-radius: 6px;
+    background: var(--btn-filter-bg);
+    padding: 6px 12px;
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        padding: 4.5px 4px 5.1px 4px;
+    }
+}
+
+// Like Button
+.like-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    background: var(--btn-like-bg);
+    box-shadow: 0px 20px 60px var(--btn-like-shadow);
+
+    &:not(&--liked) .like-btn__icon--liked {
+        display: none;
+    }
+
+    &--liked .like-btn__icon {
+        display: none;
+    }
+
+    &__icon--liked {
+        margin-top: 6px;
+    }
+}

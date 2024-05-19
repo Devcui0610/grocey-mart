@@ -32,4 +32,20 @@ html {
     @include utils.screen(md) {
         --cate-item-bg: #fff;
     }
+
+    // Button Filter
+    --btn-filter-color: #6c6c72;
+    --btn-filter-bg: #fff;
+
+    // Button Like
+    --btn-like-bg: #fff;
+    --btn-like-shadow: rgba(124, 124, 124, 0.2);
+
+    // Product Card
+    --product-card-bg: #fff;
+    --product-card-shadow: rgba(237, 237, 246, 0.2);
+
+    // Filter Form
+    --filter-form-bg: #fff;
+    --filter-form-shadow: rgba(200, 200, 200, 0.4);
 }
