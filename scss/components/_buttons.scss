@@ -46,3 +46,50 @@
         margin-top: 6px;
     }
 }
+
+//BUTTONS
+.btn {
+    height: 46px;
+    border-radius: 6px;
+    padding: 0 20px;
+
+    background: #f8f8fb;
+
+    font-size: 1.8rem;
+    font-weight: 500;
+    user-select: none;
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    & + & {
+        margin-left: 10px;
+    }
+
+    &--text {
+        color: #9e9da8;
+        background: transparent;
+        font-weight: 400;
+    }
+
+    &--primary {
+        background: #ffb700;
+    }
+
+    &--outline {
+        border: 1px solid #b9babe;
+        background: transparent;
+    }
+
+    &--rounded {
+        background: #ffb700;
+        border-radius: 99px;
+    }
+
+    &[disable],
+    &--disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}

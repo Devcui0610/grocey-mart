@@ -1,3 +1,5 @@
+@use "../utils";
+
 .filter-wrap {
     position: relative;
     z-index: 1;
@@ -6,13 +8,32 @@
 .filter {
     position: absolute;
     right: 0;
-    top: 50px;
+    top: 54px;
 
     border-radius: 20px;
     padding: 31px 30px;
 
     background: var(--filter-form-bg);
     filter: drop-shadow(0px 40px 90px var(--filter-form-shadow));
+    transition: opacity, visibility;
+    transition-duration: 0.2s;
+
+    @include utils.screen(xl) {
+        width: 50vw;
+    }
+
+    @include utils.screen(md) {
+        width: 60vw;
+    }
+
+    @include utils.screen(sm) {
+        width: 85vw;
+    }
+
+    &.hide {
+        opacity: 0;
+        visibility: hidden;
+    }
 
     &__heading {
         font-size: 2.2rem;
@@ -84,6 +105,10 @@
             border-radius: 6px;
             border: 1px solid #d2d1d6;
 
+            @include utils.screen(xl) {
+                width: 100%;
+            }
+
             &[value] {
                 font-size: 1.4rem;
                 font-weight: 500;
@@ -95,9 +120,9 @@
                 border: none;
                 font-weight: 500;
 
-                &::placeholder{
+                &::placeholder {
                     font-weight: 400;
-                    color: #9E9DA8;
+                    color: #9e9da8;
                 }
             }
         }
@@ -132,11 +157,21 @@
 
             &:first-child {
                 gap: 65px;
-                border-right: 1px solid #d2d1d6;
+                border-right: 0.5px solid #d2d1d6;
             }
 
             &:last-child {
                 gap: 17px;
+                border-left: 0.5px solid #d2d1d6;
+            }
+
+            &:first-child,
+            &:last-child {
+                @include utils.screen(xl) {
+                    flex: 1;
+                    gap: 0;
+                    justify-content: space-between;
+                }
             }
 
             &-icon {
@@ -152,6 +187,10 @@
         &-tags {
             display: flex;
             gap: 20px;
+
+            @include utils.screen(sm) {
+                gap: 9px;
+            }
         }
 
         &-tag {
@@ -193,17 +232,61 @@
 
     &__col {
         padding: 0 30px;
+
+        @include utils.screen(xl) {
+            padding: 0;
+        }
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        & + & {
+            border-left: 1px solid #eee;
+        }
+
+        @include utils.screen(xl) {
+            & + & {
+                border-left: none;
+                margin-top: 20px;
+            }
+        }
     }
 
-    &__col + &__col {
-        border-left: 1px solid #eee;
+    &__footer {
+        display: flex;
+        justify-content: right;
+        margin-top: 18px;
     }
 
-    &__col:first-child {
-        padding-left: 0;
+    &__submit,
+    &__cancel {
+        height: 38px;
+        padding: 0 10px;
     }
 
-    &__col:last-child {
-        padding-right: 0;
+    &__cancel {
+        font-size: 1.5rem;
+    }
+
+    &__submit {
+        font-size: 1.4rem;
+    }
+
+    &__arrow-up {
+        position: absolute;
+        right: 20px;
+        top: -17px;
+    }
+
+    &__content {
+        @include utils.screen(xl) {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
