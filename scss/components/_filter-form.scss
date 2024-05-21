@@ -83,7 +83,7 @@
                 width: 22px;
                 height: 22px;
 
-                background: #fff;
+                background: var(--filter-form-slider-circle-bg);
                 border-radius: 50%;
                 border: 6px solid #ffb700;
             }
@@ -113,6 +113,10 @@
                 font-size: 1.4rem;
                 font-weight: 500;
                 line-height: 1.43;
+
+                @include utils.screen(md) {
+                    font-size: 1.6rem;
+                }
             }
 
             &--search {
@@ -120,7 +124,12 @@
                 border: none;
                 font-weight: 500;
 
+                @include utils.screen(md) {
+                    font-size: 1.6rem;
+                }
+
                 &::placeholder {
+                    font-size: 1.5rem;
                     font-weight: 400;
                     color: #9e9da8;
                 }
@@ -202,7 +211,7 @@
             padding: 6px 12px;
 
             border-radius: 6px;
-            background: #f8f8fb;
+            background: var(--filter-form-tag-bg);
         }
 
         &-text-input {
@@ -281,6 +290,7 @@
         position: absolute;
         right: 20px;
         top: -17px;
+        filter: var(--filter-arrow-up-bg);
     }
 
     &__content {

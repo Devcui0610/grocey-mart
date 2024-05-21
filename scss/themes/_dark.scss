@@ -44,4 +44,10 @@ html.dark {
     // Product Card
     --product-card-bg: #171c28;
     --product-card-shadow: rgba(0, 0, 0, 0.2);
+
+    // Filter Form
+    --filter-form-bg: #2f3441;
+    --filter-form-shadow: rgba(0, 0, 0, 0.4);
+    --filter-form-tag-bg: #171c28;
+    --filter-arrow-up-bg: var(--dropdown-arrow-color);
 }
