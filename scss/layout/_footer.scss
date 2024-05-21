@@ -17,7 +17,7 @@
         }
 
         @include utils.screen(sm) {
-            gap:30px;
+            gap: 30px;
         }
     }
 
@@ -101,6 +101,70 @@
         &--desc {
             padding: 8px 0;
             line-height: 1.4;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 50px;
+
+        @include utils.screen(md) {
+            flex-direction: column-reverse;
+            row-gap: 50px;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__social {
+        &-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+
+            filter: grayscale(50%);
+            transition: translate, filter;
+            transition-duration: 0.3s;
+
+            &--facebook {
+                background: #4863a9;
+            }
+
+            &--youtube {
+                background: #f00;
+            }
+
+            &--tiktok {
+                background: #000;
+            }
+
+            &--twitter {
+                background: #4999e6;
+            }
+
+            &--linkedin {
+                background: #2f71ab;
+            }
+
+            &:hover {
+                translate: 0 -3px;
+                filter: grayscale(0);
+            }
+        }
+
+        &-icon {
+            width: 14px;
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7482%) hue-rotate(72deg)
+                brightness(99%) contrast(99%);
         }
     }
 }
