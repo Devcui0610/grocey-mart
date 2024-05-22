@@ -53,4 +53,14 @@ html {
 
     //Footer
     --footer-bg: var(--header-bg-color);
+
+    // Auth
+    --auth-content-bg: #fff;
+
+    @include utils.screen(md) {
+        --auth-intro-bg: #fff;
+    }
+
+    //Form
+    --form-placeholder-color: #d2d1d6;
 }
