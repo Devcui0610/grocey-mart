@@ -135,6 +135,10 @@
         width: 100%;
         margin-top: 30px;
 
+        &-forgot {
+            margin-top: 10px;
+        }
+
         @include utils.screen(sm) {
             margin-top: 0px;
         }
@@ -168,5 +172,9 @@
         color: #9e9da8;
         font-size: 1.8rem;
         line-height: 1.445;
+    }
+
+    &__message {
+        margin-top: 30px;
     }
 }

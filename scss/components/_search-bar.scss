@@ -1,0 +1,31 @@
+@use "../utils";
+
+.search-bar {
+    border-radius: 10px;
+    background: var(--search-bar-bg);
+
+    height: 50px;
+
+    &__input {
+        flex: 1;
+        padding-left: 15px;
+
+        &::placeholder {
+            color: #9e9da8;
+            font-size: 1.4rem;
+            line-height: 1.43;
+        }
+
+        @include utils.screen(md) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__submit {
+        padding: 0 15px;
+    }
+
+    &__icon {
+        filter: var(--search-icon-filter-color);
+    }
+}

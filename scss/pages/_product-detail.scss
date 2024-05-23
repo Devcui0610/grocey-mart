@@ -1,0 +1,232 @@
+@use "../utils";
+
+.product-page {
+    display: flex;
+    flex-direction: column;
+
+    background: var(--product-detail-bg);
+}
+
+.product-container {
+    margin-top: 30px;
+
+    @include utils.screen(md) {
+        margin-top: 20px;
+    }
+}
+
+.prod-info-container {
+    border-radius: 20px;
+    background: var(--product-info-container);
+}
+
+.prod-preview {
+    padding: 0 30px;
+
+    @include utils.screen(lg) {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    @include utils.screen(md) {
+        padding: 16px 16px 0 16px;
+    }
+
+    &__list {
+        display: flex;
+        overflow: hidden;
+
+        @include utils.screen(lg) {
+            flex: 1;
+        }
+    }
+
+    &__item {
+        width: 100%;
+        flex-shrink: 0;
+        position: relative;
+        padding-top: 92%;
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &__thumb {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 30px;
+
+        @include utils.screen(lg) {
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        @include utils.screen(md) {
+            display: none;
+        }
+
+        &-img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            cursor: pointer;
+            opacity: 0.9;
+
+            border-radius: 7px;
+            border: 1px solid rgb(158, 157, 168, 0.3);
+            transition: opacity, border-color;
+            transition-duration: 0.3s;
+
+            &:hover,
+            &--current {
+                opacity: 1;
+                border-color: #ffb700;
+            }
+        }
+    }
+}
+
+.prod-info {
+    padding: 60px;
+    background: var(--product-detail-info-bg);
+
+    @include utils.screen(xxl) {
+        padding: 40px;
+    }
+
+    @include utils.screen(lg) {
+        margin-top: 30px;
+    }
+
+    @include utils.screen(md) {
+        margin-top: 0;
+        padding: 16px;
+    }
+
+    &__heading {
+        font-size: 2.6rem;
+        font-weight: 500;
+        line-height: 1.385;
+        color: var(--product-info-heading);
+
+        @include utils.screen(md) {
+            font-size: 1.8rem;
+            line-height: 1.445;
+        }
+    }
+
+    &__label {
+        margin-top: 30px;
+    }
+
+    &__select-1 {
+        gap: 55px !important;
+    }
+
+    &__card {
+        border-radius: 6px;
+        border: 1px solid #b9babe;
+        padding: 20px;
+
+        margin-top: 27px;
+    }
+
+    &__row {
+        display: flex;
+    }
+
+    &__price {
+        color: var(--product-info-price-color);
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    &__tax {
+        color: #67b044;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), #67b044;
+
+        padding: 2px 8px;
+        margin-left: 10px;
+
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.43;
+    }
+
+    &__total-price {
+        font-size: 2.6rem;
+        font-weight: 500;
+        line-height: 1.39;
+        margin: 20px 0;
+    }
+
+    &__btn-atc {
+        flex: 1;
+        white-space: nowrap;
+    }
+
+    &__like-btn {
+        width: 46px;
+        height: 46px;
+        border-radius: 6px;
+        border: 1px solid #d2d1d6;
+        background: transparent;
+
+        margin-left: 19px;
+    }
+
+    &__tag {
+        background: var(--product-info-tag-bg);
+    }
+}
+
+.prod-props {
+    margin-left: 30px;
+
+    @include utils.screen(xxl) {
+        margin-left: 10px;
+    }
+
+    @include utils.screen(xl) {
+        margin-left: 0;
+    }
+
+    @include utils.screen(md) {
+        margin-top: 40px;
+    }
+}
+
+.prod-prop {
+    display: flex;
+    gap: 16px;
+    margin-top: 30px;
+
+    @include utils.screen(md) {
+        margin-top: 16px;
+    }
+
+    &__icon {
+        align-self: flex-start;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.445;
+    }
+
+    &__desc {
+        font-size: 1.4rem;
+        line-height: 1.43;
+        margin-top: 4px;
+    }
+}

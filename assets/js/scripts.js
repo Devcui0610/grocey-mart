@@ -188,3 +188,13 @@ window.addEventListener("template-loaded", () => {
         };
     });
 });
+
+// Chuyển hình sản phẩm
+function changeImage(imageSrc, thumb) {
+    document.getElementById('prod-preview__img').src = imageSrc;
+    var thumbnails = document.querySelectorAll('.prod-preview__thumb img');
+    thumbnails.forEach(function(img) {
+        img.classList.remove('prod-preview__thumb-img--current');
+    });
+    thumb.classList.add('prod-preview__thumb-img--current');
+}
