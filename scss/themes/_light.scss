@@ -15,6 +15,11 @@ html {
         --header-shadow-color: rgba(237, 237, 246, 0.2);
     }
 
+    // Header
+    --header-act-dropdown-bg: #fff;
+    --header-act-dropdown-shadow: rgba(200, 200, 200, 0.4);
+    --act-dropdown-bottom-border: #d2d1d6;
+
     //Dropdown
     --dropdown-bg-color: #fff;
     --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
@@ -67,9 +72,9 @@ html {
     // Product Detail
     --product-detail-bg: #fff;
     --product-detail-info-bg: #f6f6f6;
-    --product-info-container:#fff;
-    --product-info-tag-bg: #EDEDF6;
-    --product-info-price-color:#000;
+    --product-info-container: #fff;
+    --product-info-tag-bg: #ededf6;
+    --product-info-price-color: #000;
 
     @include utils.screen(md) {
         --product-detail-bg: #fafafd;
@@ -86,4 +91,27 @@ html {
 
     // Search Bar
     --search-bar-bg: #fff;
+
+    // Review Card
+    --review-card-bg: #fafafd;
+
+    @include utils.screen(md) {
+        --review-card-bg: #fff;
+    }
+
+    // Checkout
+    --checkout-breadcrumbs-bg: #fff;
+    --cart-info-bg: #fff;
+    --cart-info-shadow: rgba(237, 237, 246, 0.2);
+    --cart-item-border-color: #d2d1d6;
+    --cart-item-input-border-color: #d2d1d6;
+    --card-item-icon-filter: brightness(0) saturate(100%) invert(9%) sepia(9%) saturate(3969%) hue-rotate(210deg)
+        brightness(95%) contrast(97%);
+    --card-separate-bg: #d2d1d6;
+    --cart-give-img-wrap: #f1ecfc;
+    --cart-give-shadow: rgba(237, 237, 246, 0.2);
+
+    // Dialog
+    --dialog-bg: #fff;
+    --dialog-shadow: rgba(237, 237, 246, 0.2);
 }

@@ -3,6 +3,7 @@
 .product-page {
     display: flex;
     flex-direction: column;
+    padding-bottom: 33px;
 
     background: var(--product-detail-bg);
 }
@@ -97,6 +98,7 @@
 .prod-info {
     padding: 60px;
     background: var(--product-detail-info-bg);
+    border-radius: 10px;
 
     @include utils.screen(xxl) {
         padding: 40px;
@@ -228,5 +230,66 @@
         font-size: 1.4rem;
         line-height: 1.43;
         margin-top: 4px;
+    }
+}
+
+// Product Review
+.prod-tab {
+    &__list {
+        display: flex;
+        margin: 0 -30px;
+        flex-wrap: wrap;
+        row-gap: 20px;
+
+        @include utils.screen(md){
+            margin: 0 -15px;
+        }
+    }
+
+    &__item {
+        color: #9e9da8;
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 1.455;
+        user-select: none;
+        white-space: nowrap;
+
+        padding: 8px 30px;
+
+        @include utils.screen(md) {
+            font-size: 1.8rem;
+            padding: 8px 15px;
+        }
+
+        &:not(&--current) {
+            cursor: pointer;
+        }
+
+        &--current {
+            color: inherit;
+        }
+    }
+
+    &__contents {
+        padding-top: 30px;
+    }
+
+    &__content {
+        display: none;
+
+        &--current {
+            display: flex;
+        }
+    }
+}
+
+.prod-content {
+    width: 100%;
+
+    &__heading {
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 1.42;
+        padding-bottom: 30px;
     }
 }

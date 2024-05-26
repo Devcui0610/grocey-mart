@@ -1,0 +1,322 @@
+@use "../utils";
+
+.checkout-page {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 33px;
+
+    &__breadcrumbs {
+        background: var(--checkout-breadcrumbs-bg);
+    }
+}
+
+.checkout-container {
+    margin-top: 30px;
+
+    @include utils.screen(md) {
+        margin-top: 20px;
+    }
+}
+
+.cart-info,
+.cart-checkout,
+.cart-give {
+    padding: 0 30px;
+    border-radius: 20px;
+    background: var(--cart-info-bg);
+    box-shadow: 0px 20px 60px 10px var(--cart-info-shadow);
+
+    &__footer {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 30px 0;
+
+        color: var(--cart-item-text-dark);
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.444;
+
+        @include utils.screen(sm) {
+            display: none;
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        &-bill {
+            width: 287px;
+            margin-bottom: -10px;
+
+            @include utils.screen(sm) {
+                width: 100%;
+            }
+        }
+
+        &--bold-big {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+    }
+}
+
+.cart {
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-bottom: 10px;
+    }
+
+    &__separate {
+        width: 100%;
+        height: 1px;
+        background: var(--card-separate-bg);
+        margin: 20px 0;
+    }
+}
+
+.cart-item {
+    display: flex;
+    gap: 30px;
+
+    padding: 30px 0;
+
+    border-bottom: 1px solid var(--cart-item-border-color);
+
+    @include utils.screen(md) {
+        gap: 16px;
+    }
+
+    &__no-border-bottom {
+        border-bottom: none;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-self: flex-start;
+        flex: 1;
+
+        @include utils.screen(md) {
+            flex-direction: column;
+        }
+
+        &-left {
+            max-width: 374px;
+        }
+    }
+
+    &__thumb {
+        width: 172px;
+        height: 172px;
+        object-fit: contain;
+
+        @include utils.screen(xxl) {
+            width: 150px;
+            height: 150px;
+        }
+
+        @include utils.screen(md) {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    &__title {
+        color: var(--cart-item-text-dark);
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.444;
+
+        @include utils.screen(sm) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__price-wrap {
+        color: #9e9da8;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.444;
+        margin-top: 16px;
+
+        @include utils.screen(sm) {
+            margin-top: 22px;
+        }
+    }
+
+    &__status {
+        color: #67b044;
+    }
+
+    &__ctrl {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        min-height: 44px;
+
+        margin-top: 16px;
+
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.4667;
+
+        @include utils.screen(md) {
+            margin-top: 13px;
+            min-height: 0px;
+        }
+
+        @include utils.screen(sm) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+
+            &-bottom {
+                flex-direction: row;
+            }
+        }
+
+        &-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: 10px;
+
+            color: #9e9da8;
+            font-weight: 500;
+
+            @include utils.screen(md) {
+                margin-left: 0px;
+            }
+        }
+    }
+
+    &__input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        height: 44px;
+
+        padding: 0 20px;
+        border-radius: 10px;
+        border: 1px solid var(--cart-item-input-border-color);
+        color: var(--cart-item-text-dark);
+
+        &-btn {
+            display: flex;
+        }
+    }
+
+    &__content-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: right;
+    }
+
+    &__total-price {
+        color: var(--cart-item-text-dark);
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1.455;
+
+        @include utils.screen(md) {
+            text-align: left;
+            margin-top: 16px;
+        }
+    }
+
+    &__icon {
+        filter: var(--card-item-icon-filter);
+    }
+}
+
+.cart-checkout {
+    color: var(--cart-item-text-dark);
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 30px;
+
+    &__bold {
+        font-weight: 700;
+    }
+
+    &__btn {
+        height: 68px;
+        margin-top: 20px;
+        color: var(--cart-checkout-btn-text);
+
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 1.455;
+
+        @include utils.screen(md) {
+            height: 60px;
+        }
+    }
+
+    @include utils.screen(xl) {
+        margin-top: 30px;
+    }
+}
+
+.cart-give {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    margin-top: 30px;
+    color: var(--cart-item-text-dark);
+
+    @include utils.screen(xxl) {
+        padding: 30px 25px;
+    }
+
+    @include utils.screen(md) {
+        padding: 20px;
+    }
+
+    @include utils.screen(sm) {
+        padding: 16px;
+    }
+
+    &__img-wrap {
+        display: flex;
+        width: 76px;
+        height: 76px;
+        border-radius: 14px;
+        padding: 10px;
+        background: var(--cart-give-img-wrap);
+        box-shadow: 0px 20px 60px 10px var(--cart-give-img-wrap-shadow);
+
+        @include utils.screen(sm) {
+            width: 60px;
+            height: 60px;
+            padding: 8px;
+        }
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.445;
+
+        @include utils.screen(sm) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__desc {
+        font-size: 1.4rem;
+        line-height: 1.43;
+        margin-top: 10px;
+    }
+}
