@@ -77,6 +77,199 @@
         height: 1px;
         background: var(--card-separate-bg);
         margin: 20px 0;
+
+        &-30 {
+            margin: 30px 0;
+
+            @include utils.screen(md) {
+                margin: 16px 0;
+            }
+        }
+    }
+}
+
+.cart-info {
+    @include utils.screen(md) {
+        padding: 0 20px;
+    }
+
+    @include utils.screen(sm) {
+        padding: 0 16px;
+    }
+
+    &__heading {
+        color: var(--cart-item-text-dark);
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 1.42;
+        padding-top: 30px;
+
+        @include utils.screen(md) {
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+    }
+
+    &__sub-heading {
+        color: var(--cart-item-text-dark);
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.444;
+    }
+}
+
+.user-address {
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--cart-item-text-dark);
+
+        @include utils.screen(md) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.444;
+
+        @include utils.screen(md) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__desc {
+        font-size: 1.5rem;
+        line-height: 1.467;
+        margin-top: 4px;
+
+        @include utils.screen(md) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__message {
+        margin-top: 30px;
+        font-weight: 500;
+    }
+
+    &__link {
+        color: #0071cd;
+    }
+
+    &__btn {
+        color: var(--cart-checkout-btn-text);
+
+        @include utils.screen(md) {
+            margin-top: 16px;
+        }
+    }
+}
+
+.address-cart {
+    display: flex;
+    margin-top: 30px;
+    color: var(--cart-item-text-dark);
+
+    @include utils.screen(md) {
+        flex-direction: column;
+    }
+
+    &__left {
+        display: flex;
+        gap: 16px;
+        flex: 1;
+    }
+
+    &__right {
+        @include utils.screen(md) {
+            margin-top: 16px;
+        }
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.444;
+
+        @include utils.screen(md) {
+            font-size: 1.6rem;
+            line-height: 1.5;
+        }
+    }
+
+    &__desc {
+        width: min(520px);
+        font-size: 1.5rem;
+        line-height: 1.467;
+        margin-top: 4px;
+
+        @include utils.screen(lg) {
+            width: min(450px);
+        }
+
+        @include utils.screen(md) {
+            width: min(450px, 100%);
+            font-size: 1.4rem;
+            line-height: 1.43;
+        }
+    }
+
+    &__list {
+        display: flex;
+        gap: 30px;
+
+        font-size: 1.4rem;
+        line-height: 1.43;
+        list-style: disc inside;
+
+        padding-left: 8px;
+        margin-top: 20px;
+
+        @include utils.screen(md) {
+            margin-top: 16px;
+            gap: 16px;
+        }
+    }
+
+    &__ctrl {
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
+
+        &-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 1.8rem;
+            line-height: 1.444;
+        }
+    }
+
+    &__checkbox {
+        position: relative;
+        top: -2px;
+
+        &-input {
+            appearance: none;
+
+            &::before {
+                content: url("../icons/checkbox-uncheck.svg");
+            }
+
+            &:not(:checked)::before{
+                filter: var(--card-item-icon-filter);
+            }
+
+            &:checked::before {
+                content: url("../icons/checkbox-checked.svg");
+            }
+        }
     }
 }
 
@@ -235,6 +428,10 @@
 
     &__icon {
         filter: var(--card-item-icon-filter);
+
+        &-dark {
+            filter: var(--empty);
+        }
     }
 }
 

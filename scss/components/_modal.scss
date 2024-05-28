@@ -5,7 +5,7 @@
     inset: 0;
 }
 
-.dialog {
+.modal {
     @extend %fill-screen;
     z-index: 98;
 
@@ -23,15 +23,56 @@
         visibility: visible;
     }
 
+    &__close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+
+        font-size: 3.5rem;
+        padding: 20px 30px;
+    }
+
+    &__body {
+        max-height: calc(100vh - 200px);
+        overflow-y: auto;
+    }
+
+    &__heading {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.42;
+        padding-bottom: 10px;
+        color: var(--cart-item-text-dark);
+    }
+
+    &__form-label{
+        color: var(--cart-item-text-dark);
+    }
+
     &__content {
         position: relative;
         z-index: 1;
 
-        max-width: min(500px, 100% - 40px);
+        width: min(var(--content-width, 800px), 100% - 40px);
         background: var(--dialog-bg);
         padding: 30px;
         border-radius: 20px;
         box-shadow: 0px 20px 60px 10px var(--dialog-shadow);
+    }
+
+    &--small &__content {
+        --content-width: 400px;
+    }
+
+    &--large &__content {
+        --content-width: 1100px;
+    }
+
+    &--fill &__content {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
     }
 
     &__overlay {
