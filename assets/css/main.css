@@ -97,8 +97,18 @@ select {
   border: none;
 }
 
-input {
+input,
+textarea {
   background: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-webkit-autofill:hover {
+  transition: background-color 1s 9999s;
+  -webkit-text-fill-color: var(--text-color);
+  caret-color: var(--text-color);
 }
 
 .icon {
@@ -1804,6 +1814,7 @@ html {
   --footer-bg: var(--header-bg-color);
   --auth-content-bg: #fff;
   --form-placeholder-color: #d2d1d6;
+  --form-option-bg: #ebebeb;
   --product-detail-bg: #fff;
   --product-detail-info-bg: #f6f6f6;
   --product-info-container: #fff;
@@ -1900,6 +1911,7 @@ html.dark {
   --auth-intro-text-color: #b9babe;
   --auth-heading-color: #b9babe;
   --form-placeholder-color: #b9babe;
+  --form-option-bg: #6e6e6e;
   --product-detail-bg: #292e39;
   --product-info-heading: #b9babe;
   --product-info-container: #171c28;
@@ -1924,7 +1936,7 @@ html.dark {
   --cart-checkout-btn-text: #1a162e;
   --cart-give-img-wrap: #292e39;
   --cart-give-shadow: rgba(23, 28, 40, 0.2);
-  --dialog-bg:#2f3441;
+  --dialog-bg: #2f3441;
   --dialog-shadow: rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 991.98px) {
@@ -2336,6 +2348,10 @@ html.dark {
   background: #ffb700;
   border-radius: 99px;
 }
+.btn--danger {
+  color: #fff;
+  background: #ed4337;
+}
 .btn[disable], .btn--disabled {
   opacity: 0.5;
   pointer-events: none;
@@ -2650,9 +2666,6 @@ html.dark {
   border: 1px solid #d2d1d6;
   padding: 0 12px;
 }
-.form__text-area--small, .form__text-input--small {
-  border-radius: 8px;
-}
 .form__text-area:focus-within, .form__text-input:focus-within {
   border-color: #77dae6;
 }
@@ -2661,10 +2674,10 @@ html.dark {
   height: 100px;
 }
 .form__text-area-input {
-  background: transparent;
   resize: none;
 }
 .form__text-input {
+  position: relative;
   height: 50px;
 }
 .form__text-input--small {
@@ -2777,6 +2790,111 @@ html.dark {
   width: 24px;
   height: 24px;
   cursor: pointer;
+}
+.form__select-dialog {
+  position: absolute;
+  bottom: 44px;
+  left: 10px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 10px;
+  min-width: 230px;
+  max-height: 315px;
+  background: var(--dropdown-bg-color);
+  padding: 0 0 10px;
+  border-radius: 10px;
+  border: 1px solid #d2d1d6;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 575.98px) {
+  .form__select-dialog {
+    position: fixed;
+    inset: 0;
+    max-width: inherit;
+    max-height: inherit;
+    border-radius: 0;
+  }
+}
+.form__select-dialog.show {
+  opacity: 1;
+  visibility: visible;
+  translate: 0;
+}
+.form__search {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 38px;
+  margin-bottom: 10px;
+  padding: 5px 20px;
+  border-bottom: 1px solid #d2d1d6;
+}
+@media (max-width: 991.98px) {
+  .form__search {
+    height: 42px;
+  }
+}
+@media (max-width: 575.98px) {
+  .form__search {
+    margin: 10px 20px 20px;
+    padding: 5px 10px;
+    border: 1px solid #d2d1d6;
+    border-radius: 7px;
+  }
+}
+.form__search-input {
+  height: 100%;
+  flex: 1;
+  font-size: 1.6rem;
+}
+.form__search-input::placeholder {
+  font-size: 1.4rem;
+}
+.form__search-icon {
+  width: 24px;
+  height: 24px;
+  padding: 5px;
+  filter: var(--search-icon-filter-color);
+}
+.form__dialog-heading {
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 600;
+  padding: 14px;
+}
+.form__close-dialog {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 3rem;
+  padding: 0 10px;
+  opacity: 0.8;
+}
+.form__options-list {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.form__option {
+  line-height: 1.8;
+  font-size: 1.4rem;
+  padding: 0 20px;
+}
+@media (max-width: 991.98px) {
+  .form__option {
+    line-height: 3;
+  }
+}
+.form__option:not(.form__option--current):hover {
+  background: var(--form-option-bg);
+  cursor: pointer;
+}
+.form__option--current {
+  font-weight: 500;
+  background: rgba(255, 183, 0, 0.5);
 }
 .form__tags {
   display: flex;
@@ -3069,6 +3187,7 @@ html.dark {
 .modal__bottom {
   display: flex;
   justify-content: flex-end;
+  gap: 10px;
   flex-wrap: wrap;
   margin-top: 30px;
 }

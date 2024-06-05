@@ -46,7 +46,7 @@
         color: var(--cart-item-text-dark);
     }
 
-    &__form-label{
+    &__form-label {
         color: var(--cart-item-text-dark);
     }
 
@@ -88,6 +88,7 @@
     &__bottom {
         display: flex;
         justify-content: flex-end;
+        gap: 10px;
         flex-wrap: wrap;
         margin-top: 30px;
     }

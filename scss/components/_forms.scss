@@ -79,10 +79,6 @@ $error-color: #ed4337;
         border: 1px solid #d2d1d6;
         padding: 0 12px;
 
-        &--small {
-            border-radius: 8px;
-        }
-
         &:focus-within {
             border-color: #77dae6;
         }
@@ -93,12 +89,12 @@ $error-color: #ed4337;
         height: 100px;
 
         &-input {
-            background: transparent;
             resize: none;
         }
     }
 
     &__text-input {
+        position: relative;
         height: 50px;
 
         &--small {
@@ -239,6 +235,126 @@ $error-color: #ed4337;
             width: 24px;
             height: 24px;
             cursor: pointer;
+        }
+
+        &-dialog {
+            position: absolute;
+            bottom: 44px;
+            left: 10px;
+
+            z-index: 1;
+
+            display: flex;
+            flex-direction: column;
+
+            opacity: 0;
+            visibility: hidden;
+            translate: 0 10px;
+
+            min-width: 230px;
+            max-height: 315px;
+
+            background: var(--dropdown-bg-color);
+            padding: 0 0 10px;
+            border-radius: 10px;
+            border: 1px solid #d2d1d6;
+            box-shadow: 0 0 5px rgba($color: #000, $alpha: 0.2);
+
+            @include utils.screen(sm) {
+                position: fixed;
+                inset: 0;
+                max-width: inherit;
+                max-height: inherit;
+                border-radius: 0;
+            }
+
+            &.show {
+                opacity: 1;
+                visibility: visible;
+                translate: 0;
+            }
+        }
+    }
+
+    &__search {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+
+        height: 38px;
+
+        margin-bottom: 10px;
+        padding: 5px 20px;
+        border-bottom: 1px solid #d2d1d6;
+
+        @include utils.screen(lg) {
+            height: 42px;
+        }
+
+        @include utils.screen(sm) {
+            margin: 10px 20px 20px;
+            padding: 5px 10px;
+            border: 1px solid #d2d1d6;
+            border-radius: 7px;
+        }
+
+        &-input {
+            height: 100%;
+            flex: 1;
+            font-size: 1.6rem;
+
+            &::placeholder {
+                font-size: 1.4rem;
+            }
+        }
+
+        &-icon {
+            width: 24px;
+            height: 24px;
+            padding: 5px;
+            filter: var(--search-icon-filter-color);
+        }
+    }
+
+    &__dialog-heading {
+        font-size: 1.8rem;
+        text-align: center;
+        font-weight: 600;
+        padding: 14px;
+    }
+
+    &__close-dialog {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 3rem;
+        padding: 0 10px;
+        opacity: 0.8;
+    }
+
+    &__options-list {
+        flex: 1;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    &__option {
+        line-height: 1.8;
+        font-size: 1.4rem;
+        padding: 0 20px;
+
+        @include utils.screen(lg) {
+            line-height: 3;
+        }
+
+        &:not(&--current):hover {
+            background: var(--form-option-bg);
+            cursor: pointer;
+        }
+
+        &--current {
+            font-weight: 500;
+            background: rgba($color: #ffb700, $alpha: 0.5);
         }
     }
 
