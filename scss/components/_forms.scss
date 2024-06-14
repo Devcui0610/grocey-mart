@@ -23,6 +23,10 @@ $error-color: #ed4337;
         @include utils.screen(sm) {
             flex-direction: column;
         }
+
+        &--no-dir{
+            flex-direction: unset;
+        }
     }
 
     &__group {

@@ -136,6 +136,10 @@ u {
   text-decoration: underline;
 }
 
+.no-gap {
+  gap: 0px !important;
+}
+
 /*=== [END-SUPPORT CODE] ===*/
 /*======== [GRID SYSTEM] =======*/
 .row > *, .container-fluid, .container {
@@ -2628,6 +2632,9 @@ html.dark {
     flex-direction: column;
   }
 }
+.form__row--no-dir {
+  flex-direction: unset;
+}
 .form__group {
   margin-top: 30px;
 }
@@ -4242,6 +4249,11 @@ html.dark {
   line-height: 1.4667;
   margin-top: 4px;
 }
+@media (max-width: 575.98px) {
+  .payment-item__detail {
+    align-self: center;
+  }
+}
 .payment-item__content {
   display: flex;
   justify-content: space-between;
@@ -4252,7 +4264,7 @@ html.dark {
   .payment-item__content {
     flex-direction: column;
     align-items: flex-start;
-    row-gap: 16px;
+    gap: 16px;
   }
 }
 .payment-item__thumb {
