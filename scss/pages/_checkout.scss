@@ -78,6 +78,10 @@
         background: var(--card-separate-bg);
         margin: 20px 0;
 
+        &--no-mb {
+            margin: 20px 0 0;
+        }
+
         &-30 {
             margin: 30px 0;
 
@@ -138,6 +142,13 @@
         }
     }
 
+    &__desc {
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 1.4667;
+        margin-top: 6px;
+    }
+
     &__sub-heading {
         color: var(--cart-item-text-dark);
         font-size: 1.8rem;
@@ -176,6 +187,21 @@
             &:checked::before {
                 content: url("../icons/checkbox-checked.svg");
             }
+        }
+    }
+
+    &__check-all {
+        margin-top: 30px;
+    }
+
+    &__footer--favourite {
+        align-items: center;
+        
+        @include utils.screen(sm) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
         }
     }
 }
@@ -306,15 +332,10 @@
 
 .cart-item {
     display: flex;
-    gap: 30px;
 
     padding: 30px 0;
 
     border-bottom: 1px solid var(--cart-item-border-color);
-
-    @include utils.screen(md) {
-        gap: 16px;
-    }
 
     &__no-border-bottom {
         border-bottom: none;
@@ -333,12 +354,26 @@
         &-left {
             max-width: 374px;
         }
+
+        &--favourite {
+            @include utils.screen(lg) {
+                flex-direction: column;
+            }
+        }
+    }
+
+    &__btn {
+        height: 68px;
+        padding: 0 40px;
+        font-size: 2.2rem;
+        // color:
     }
 
     &__thumb {
         width: 172px;
         height: 172px;
         object-fit: contain;
+        margin: 0 30px 0 20px;
 
         @include utils.screen(xxl) {
             width: 150px;
@@ -348,6 +383,7 @@
         @include utils.screen(md) {
             width: 60px;
             height: 60px;
+            margin: 0 14px;
         }
     }
 
@@ -376,6 +412,18 @@
 
     &__status {
         color: #67b044;
+    }
+
+    &__ctrl-wrap {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        @include utils.screen(xl) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0px;
+        }
     }
 
     &__ctrl {
@@ -443,6 +491,15 @@
         flex-direction: column;
         justify-content: space-between;
         text-align: right;
+
+        &--favourite {
+            @include utils.screen(lg) {
+                align-items: flex-start;
+                gap: 16px;
+
+                margin-top: 16px;
+            }
+        }
     }
 
     &__total-price {
@@ -592,7 +649,7 @@
         line-height: 1.4667;
         margin-top: 4px;
 
-        @include utils.screen(sm){
+        @include utils.screen(sm) {
             align-self: center;
         }
     }

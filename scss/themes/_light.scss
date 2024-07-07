@@ -112,9 +112,19 @@ html {
     --cart-payment-bg: #f6f6f6;
     --cart-give-img-wrap: #f1ecfc;
     --cart-give-shadow: rgba(237, 237, 246, 0.2);
-    --cart-item-text-dark-low: #9E9DA8;
+    --cart-item-text-dark-low: #9e9da8;
 
     // Dialog
     --dialog-bg: #fff;
     --dialog-shadow: rgba(237, 237, 246, 0.2);
+
+    // Profile
+    --profile-content-bg: #fff;
+    --profile-text-color: #000;
+    --profile-icon-color: brightness(0) saturate(100%) invert(10%) sepia(46%) saturate(697%) hue-rotate(210deg)
+        brightness(88%) contrast(99%);
+
+    // Account info
+    --account-info-bg: #f6f6f6;
+    --account-info-icon-bg: #fff;
 }

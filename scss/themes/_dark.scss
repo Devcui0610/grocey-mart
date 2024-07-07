@@ -96,7 +96,7 @@ html.dark {
     --cart-item-border-color: #292e39;
     --cart-item-input-border-color: #292e39;
     --cart-item-text-dark: #b9babe;
-    --cart-item-text-dark-low: #9E9DA8;
+    --cart-item-text-dark-low: #9e9da8;
     --card-item-icon-filter: brightness(0) saturate(100%) invert(89%) sepia(6%) saturate(138%) hue-rotate(191deg)
         brightness(86%) contrast(84%);
     --card-separate-bg: #292e39;
@@ -109,4 +109,13 @@ html.dark {
     --dialog-bg: #2f3441;
     --dialog-shadow: rgba(0, 0, 0, 0.2);
 
+    // Profile
+    --profile-content-bg: #171c28;
+    --profile-text-color: #b9babe;
+    --profile-icon-color: brightness(0) saturate(100%) invert(88%) sepia(7%) saturate(116%) hue-rotate(191deg)
+        brightness(86%) contrast(85%);
+
+    // Account info
+    --account-info-bg: #292E39;
+    --account-info-icon-bg: #171C28;
 }

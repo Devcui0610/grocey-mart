@@ -1,0 +1,29 @@
+.account-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--profile-text-color);
+
+    border-radius: 10px;
+    background: var(--account-info-bg);
+    padding: 10px;
+
+    &__icon {
+        padding: 15px;
+        border-radius: 8px;
+        background: var(--account-info-icon-bg);
+        flex-shrink: 0;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.4667;
+    }
+
+    &__desc {
+        font-size: 1.4rem;
+        line-height: 1.43;
+        margin-top: 6px;
+    }
+}

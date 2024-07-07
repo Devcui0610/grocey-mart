@@ -1,0 +1,22 @@
+@use "../utils";
+
+.form-card {
+    &__label {
+        margin-bottom: 20px;
+        color: var(--profile-text-color);
+
+        @include utils.screen(md) {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.467;
+            margin-bottom: 12px;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 30px;
+    }
+}

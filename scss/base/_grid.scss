@@ -1,6 +1,10 @@
 /*======== [GRID SYSTEM] =======*/
 @use "sass:math";
 
+.mt-30{
+    margin-top: 30px;
+}
+
 $grid-breakpoints: (
     xxl: 1400px,
     xl: 1200px,
