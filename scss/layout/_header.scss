@@ -18,7 +18,7 @@
 .top-bar {
     @extend %flexItemsCenter;
     position: relative;
-    padding: 30px 0;
+    padding: 16px 0;
     z-index: 1;
 
     @include utils.screen(lg) {
@@ -111,6 +111,14 @@
         width: 1px;
         height: 30px;
         background: #ededf6;
+    }
+
+    &__user {
+        position: relative;
+
+        &:hover .act-dropdown {
+            display: block;
+        }
     }
 
     &__avatar {
@@ -300,8 +308,8 @@
     min-height: 752px;
     position: absolute;
     right: -40px;
-    top: 23px;
-    padding-top: 54px;
+    top: 45px;
+    padding-top: 27px;
     display: none;
 
     &__inner {
@@ -384,6 +392,15 @@
         top: -17px;
         right: 67px;
         filter: var(--act-dropdown-arrow);
+
+        &__profile {
+            right: 15px;
+        }
+    }
+
+    &__profile {
+        right: 0;
+        width: min(260px, 100vw);
     }
 }
 
@@ -426,5 +443,51 @@
         line-height: 1.47;
         text-align: left;
         margin-top: 6px;
+    }
+}
+
+.user-menu {
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__avatar {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    &__name {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    &__list {
+        margin-top: 30px;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+
+        &:hover {
+            font-weight: 500;
+        }
+    }
+
+    &__separate {
+        border-top: 1px solid var(--card-separate-bg);
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+
+    &__icon {
+        width: 16px;
     }
 }
